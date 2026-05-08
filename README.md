@@ -13,6 +13,11 @@ This is the code demo for the article on the IQ blog:
 
 - [How to Build a Customer Support Agent with ADK-TS](https://blog.iqai.com/)
 
+> **Branch guide:**
+>
+> - **`starter`** — UI complete, agent stubs in place — start here when following the article
+> - **`final`** — Complete implementation: fully working agent with all tools, session state, and error handling
+
 Please give this repo a ⭐ if it was helpful to you!
 
 ## Table of Contents
