@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://files.catbox.moe/vumztw.png" alt="ADK-TS Logo" width="80" />
   <br/>
-  <h1>Acme Corp Customer Support Agent</h1>
+  <h1>Customer Support Agent</h1>
   <b>Demo project for the article "How to Build a Customer Support Agent with ADK-TS"</b>
   <br/>
   <i>ADK-TS · React · Vite · Built-in Tools · Custom Tools · Session State</i>
@@ -29,7 +29,7 @@ Please give this repo a ⭐ if it was helpful to you!
 
 ## Overview
 
-Acme Corp Support is a customer support chatbot built with ADK-TS. It covers how to use ADK-TS built-in tools (`FileOperationsTool`, `HttpRequestTool`) alongside a fully custom tool built with `createTool`, with session state wired in throughout. The project runs as a web chat UI and as an interactive terminal CLI.
+This is a customer support chatbot built with ADK-TS. It covers how to use ADK-TS built-in tools (`FileOperationsTool`, `HttpRequestTool`) alongside a fully custom tool built with `createTool`, with session state wired in throughout. The project runs as a web chat UI and as an interactive terminal CLI.
 
 ## Features
 
