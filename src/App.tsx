@@ -1,6 +1,7 @@
 import { type FormEvent, useEffect, useRef, useState } from "react";
 
 interface Message {
+	id: string;
 	role: "user" | "agent";
 	text: string;
 }
@@ -17,6 +18,7 @@ const EXAMPLES = [
 export default function App() {
 	const [messages, setMessages] = useState<Message[]>([
 		{
+			id: crypto.randomUUID(),
 			role: "agent",
 			text: "Hi! I'm the Acme Corp support agent. How can I help you today?",
 		},
@@ -26,13 +28,18 @@ export default function App() {
 	const bottomRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+		if (messages.length > 0 || loading) {
+			bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+		}
 	}, [messages, loading]);
 
 	async function send(text: string) {
 		if (!text.trim() || loading) return;
 
-		setMessages((prev) => [...prev, { role: "user", text }]);
+		setMessages((prev) => [
+			...prev,
+			{ id: crypto.randomUUID(), role: "user", text },
+		]);
 		setInput("");
 		setLoading(true);
 
@@ -46,6 +53,7 @@ export default function App() {
 			setMessages((prev) => [
 				...prev,
 				{
+					id: crypto.randomUUID(),
 					role: "agent",
 					text: data.response ?? data.error ?? "Something went wrong.",
 				},
@@ -53,7 +61,11 @@ export default function App() {
 		} catch {
 			setMessages((prev) => [
 				...prev,
-				{ role: "agent", text: "Connection error. Is the server running?" },
+				{
+					id: crypto.randomUUID(),
+					role: "agent",
+					text: "Connection error. Is the server running?",
+				},
 			]);
 		} finally {
 			setLoading(false);
@@ -75,8 +87,8 @@ export default function App() {
 			</header>
 
 			<div className="messages">
-				{messages.map((m, i) => (
-					<div key={i} className={`message ${m.role}`}>
+				{messages.map((m) => (
+					<div key={m.id} className={`message ${m.role}`}>
 						<div className="bubble">{m.text}</div>
 					</div>
 				))}
