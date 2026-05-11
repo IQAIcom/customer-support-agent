@@ -127,7 +127,7 @@ flowchart TD
    **Web chat UI** (server + frontend together):
 
    ```bash
-   pnpm dev:web
+   pnpm dev
    ```
 
    Open [http://localhost:5173](http://localhost:5173).
@@ -135,14 +135,14 @@ flowchart TD
    **Terminal CLI** (no UI, just the agent in your terminal):
 
    ```bash
-   pnpm dev
+   pnpm dev:cli
    ```
 
 ## Usage
 
-**Web UI** — type a message into the chat box and press Send. Use the example prompt buttons on first load to try common support scenarios.
+**Web UI** (`pnpm dev`) — type a message into the chat box and press Send. Use the example prompt buttons on first load to try common support scenarios.
 
-**CLI** — type your question at the `You:` prompt and press Enter. Type `exit` to quit.
+**CLI** (`pnpm dev:cli`) — type your question at the `You:` prompt and press Enter. Type `exit` to quit.
 
 Things to try:
 

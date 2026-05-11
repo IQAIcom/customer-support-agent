@@ -3,10 +3,10 @@
 	"version": "1.0.0",
 	"description": "A customer support agent built with ADK-TS",
 	"scripts": {
-		"dev": "tsx server/index.ts",
-		"dev:server": "tsx server/server.ts",
+		"dev": "concurrently \"tsx src/server/server.ts\" \"vite\"",
+		"dev:cli": "tsx src/server/index.ts",
+		"dev:server": "tsx src/server/server.ts",
 		"dev:ui": "vite",
-		"dev:web": "concurrently \"tsx server/server.ts\" \"vite\"",
 		"build": "vite build",
 		"preview": "vite preview"
 	},

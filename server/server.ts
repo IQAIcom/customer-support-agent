@@ -54,7 +54,7 @@ async function main() {
 
 	server.listen(PORT, () => {
 		console.log(`API server → http://localhost:${PORT}`);
-		console.log('Run "pnpm run dev:web" to start both server and UI together.');
+		console.log('Run "pnpm dev" to start both server and UI together.');
 	});
 }
 
